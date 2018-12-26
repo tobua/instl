@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/naminho/instl/master/logo.svg?sanitize=true" alt="macos logo">
+  <img src="https://raw.githubusercontent.com/naminho/instl/master/logo.svg?sanitize=true" alt="macos logo" width="300">
+  <br>
 </p>
 
 # instl
@@ -38,7 +39,7 @@ Edit the Desktop Background in `Settings → Desktop & Screen Saver`. Remove unn
 
 ```
 ssh-keygen -t rsa -b 4096 -C "matthias.giger@namics.com"
-# Enter random passphrase (needed again for ssh-add below)
+# Do not enter a passphrase, as this would have to be entered on every commit.
 eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
@@ -62,6 +63,8 @@ echo "export PS1='\W \$'" >> ~/.bash_profile
 
 `Settings → Keyboard → Input Sources → +` then to allow easily switching the layout go to
 `Settings → Keyboard → Shortcuts` and under `Input Sources` set `⌥ Space` as the shortcut for next language.
+
+## Screenshot of Resulting Setup
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/naminho/instl/master/screenshot.png" alt="screenshot after install">
