@@ -64,6 +64,11 @@ echo "export PS1='\W \$'" >> ~/.bash_profile
 `Settings → Keyboard → Input Sources → +` then to allow easily switching the layout go to
 `Settings → Keyboard → Shortcuts` and under `Input Sources` set `⌥ Space` as the shortcut for next language.
 
+### Prevent Sourcetree package-lock Lag
+
+The package-lock file is generated automatically, but due to it's size and the often huge amount of changes
+it bogs down Sourcetree. To prevent this simply ignore the contents of those files in `Preferences → Diff → Ignore File Patterns` and add `, **/package-lock.json`.
+
 ## Screenshot of Resulting Setup
 
 <p align="center">
