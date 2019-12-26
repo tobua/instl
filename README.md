@@ -13,25 +13,23 @@ Edit the Desktop Background in `Settings → Desktop & Screen Saver`. Remove unn
 
 ## Applications
 
-* [Chrome](https://www.google.com/chrome/) Browser
-* [Lastpass](https://lastpass.com/?&ac=1) Passwords (Synced from Chrome Account)
-* [node](https://nodejs.org) JavaScript
-* [Atom](https://atom.io/) Code
-  * [Essential UI](https://atom.io/themes/essential-ui) Theme
-  * [Editorconfig](https://atom.io/packages/editorconfig) Indentation
-* [Sourcetree](https://www.sourcetreeapp.com/) Git
-* [Sketch](https://www.sketchapp.com/) Design
-* [Principle](http://principleformac.com/) Animations
+- [Chrome](https://www.google.com/chrome/) Browser
+- [Lastpass](https://lastpass.com/?&ac=1) Passwords (Synced from Chrome Account)
+- [node](https://nodejs.org) JavaScript
+- [VS Code](https://code.visualstudio.com/) Code Editor
+  - Extensions: Prettier, ESLint, Stylelint, GitLens and FlowJS
+- [Sourcetree](https://www.sourcetreeapp.com/) Git
 
 ## npm
 
-* Login: `npm login`
-* ncu (Update Dependencies) `npm i -g npm-check-updates`
+- Login: `npm login`
+- Global packages without sudo: `sudo chown -R $USER /usr/local/lib/node_modules` & `sudo chown -R $USER /usr/local/bin` (may not be super safe!)
+- ncu (Update Dependencies) `npm i -g npm-check-updates`
 
 ## React Native
 
-* XCode from App Store
-* [AndroidStudio](https://developer.android.com/studio/) Android IDE
+- XCode from App Store
+- [AndroidStudio](https://developer.android.com/studio/) Android IDE
 
 ## Configuration
 
