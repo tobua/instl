@@ -5,11 +5,24 @@
 
 # instl
 
-Things for Frontend Development to install after setting up a fresh macOS installation.
+Guide to reinstall macOS optimized for Web Development.
 
 ## First Things First
 
-Edit the Desktop Background in `Settings → Desktop & Screen Saver`. Remove unnecessary applications from the Dock. Make sure FileVault is turned on in `Settings → Security & Privacy`.
+- Backup your data in the Cloud or on a physical drive.
+- Startup your mac in Internet Recovery by pressing and holding `⌘⌥R`.
+- Go to `Disk Utility` and select `View → Show All Devices` then select the main Apple SSD and click `Erase` with format APFS and GUID scheme.
+- Exit `Disk Utility` and format the drive by clicking `Reinstall macOS` in the main menu.
+- This will take some time and then follow the instructions making sure to enable encryption when prompted.
+
+## Configuring the System
+
+- Install Updates and enable Auto Update in `⚙️ Software Update`.
+- Add applications listed below.
+- Remove unused apps from dock and disable `Show recent applications` in dock preferences.
+- Edit the Desktop Background in `Settings → Desktop & Screen Saver`.
+- Increase mouse tracking speed in `⚙️ Mouse` and enable secondary click if you're using Magic Mouse.
+- Make sure Guest Account is disabled in `⚙️ Users & Groups`.
 
 ## Applications
 
@@ -20,18 +33,18 @@ Edit the Desktop Background in `Settings → Desktop & Screen Saver`. Remove unn
   - Extensions: Prettier, ESLint, Stylelint, GitLens and FlowJS
 - [Sourcetree](https://www.sourcetreeapp.com/) Git
 
-## npm
+## Application Specific Setup
+
+### npm
 
 - Login: `npm login`
 - Global packages without sudo: `sudo chown -R $USER /usr/local/lib/node_modules` & `sudo chown -R $USER /usr/local/bin` (may not be super safe!)
 - ncu (Update Dependencies) `npm i -g npm-check-updates`
 
-## React Native
+### React Native
 
 - XCode from App Store
 - [AndroidStudio](https://developer.android.com/studio/) Android IDE
-
-## Configuration
 
 ### GitHub SSH Key
 
@@ -53,11 +66,9 @@ folder is displayed. The command will create a `.bash-profile` file.
 echo "export PS1='\W \$'" >> ~/.bash_profile
 ```
 
-### Disable Guest Account
+### Enable Language with Special Characters
 
-`Settings → Users & Groups` Unlock on Bottom Left and then turn of Guest Access for safety reasons.
-
-### Enable Secondary Keyboard Layout
+Recommended if you frequently switch to a local language requiring special characters. If you only need a few characters every once in a while try pressing and holding the related character `a → 4 → ä` and a menu to select the desired special character will show up.
 
 `Settings → Keyboard → Input Sources → +` then to allow easily switching the layout go to
 `Settings → Keyboard → Shortcuts` and under `Input Sources` set `⌥ Space` as the shortcut for next language.
