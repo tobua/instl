@@ -1,6 +1,10 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/naminho/instl/master/screenshot.png" alt="Screenshot after installation">
+</p>
+
 # instl
 
-Guide to reinstall macOS optimized for Web Development.
+Guide to reinstall the latest macOS optimized for Web Development.
 
 ## First Things First
 
@@ -33,13 +37,13 @@ Guide to reinstall macOS optimized for Web Development.
 ### Terminal
 
 This will avoid showing the computer name for every prompt and only the current
-folder is displayed. The command will create a `.bash-profile` file in the user root folder.
+folder is displayed. The command will create a `.zshrc` file in the user root folder.
 
 ```
-echo "export PS1='→ '" >> ~/.bash_profile
+echo "export PS1='→ '" >> ~/.zshrc
 ```
 
-It will take a restart for this to take effect, for an immediate result load the file now with `source ~/.bash_profile`. In between the single quotation marks you can add whatever, usually a `$` sign is used.
+It will take a restart for this to take effect, for an immediate result load the file now with `source ~/.zshrc`. In between the single quotation marks you can add whatever, usually a `$` sign is used.
 
 ### npm
 
@@ -74,12 +78,6 @@ Recommended if you frequently switch to a local language requiring special chara
 
 `Settings → Keyboard → Input Sources → +` then to allow easily switching the layout go to
 `Settings → Keyboard → Shortcuts` and under `Input Sources` set **⌥Space** as the shortcut for next language.
-
-## Screenshot of Resulting Setup
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/naminho/instl/master/screenshot.png" alt="screenshot after install">
-</p>
 
 ## Usage
 
