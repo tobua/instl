@@ -23,6 +23,7 @@ Guide to reinstall the latest macOS optimized for Web Development.
 - Increase mouse tracking speed in `⚙️ Mouse` and enable secondary click if you're using Magic Mouse.
 - Make sure Guest Account is disabled in `⚙️ Users & Groups`.
 - In `⚙️ Mission Control → Hot Corners...` add Mission Control to Bottom Right and Desktop to Bottom Left.
+- `⚙️ Energy Saver` increase time until display turns off when on power.
 
 ## Applications
 
@@ -57,6 +58,8 @@ It will take a restart for this to take effect, for an immediate result load the
 - Theme: **⌘KT** and select `Light+`.
 - Configuration: Disable `View → Appearance → Show Status Bar`, `View → Show Minimap` and `View → Show Breadcrumbs`.
 - Terminal: **⌘J** to toggle the terminal.
+- Prettier: Go to settings with **⌘,** search for `Format On Save` and check the box. This way the code will be prettified automatically on each save of a file.
+- Remove line numbers: `Settings → Line Numbers` off, uncheck `Folding` and uncheck `Glyph Margin`.
 
 ### Sourcetree
 
@@ -82,3 +85,9 @@ Recommended if you frequently switch to a local language requiring special chara
 ## Usage
 
 - Press **⌘⇧.** to show hidden files temporarly in Finder.
+- Testing local npm packages:
+  - `npm link` inside a package will make the package available globally.
+    - `npm link former-package` will create a symlink to this global package.
+  - `npm i ../some-package` will create a symlink to this package.
+  - With symlinks often many features don't work, but changes to the code base are immediately reflected.
+  - `npm install --no-save $(npm pack ../some-package | tail -1)` will pack the module and install it as if it were coming from a published package. Needs a refresh every time the packages code changes.
