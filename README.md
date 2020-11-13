@@ -50,7 +50,7 @@ It will take a restart for this to take effect, for an immediate result load the
 
 - Login: `npm login`
 - Global packages without sudo: `sudo chown -R $USER /usr/local/lib/node_modules` & `sudo chown -R $USER /usr/local/bin` (may not be super safe!)
-- ncu (Update Dependencies) `npm i -g npm-check-updates`
+- Useful everyday commands `npm i -g epic-cli`
 
 ### VS Code
 
@@ -85,9 +85,3 @@ Recommended if you frequently switch to a local language requiring special chara
 ## Usage
 
 - Press **⌘⇧.** to show hidden files temporarly in Finder.
-- Testing local npm packages:
-  - `npm link` inside a package will make the package available globally.
-    - `npm link former-package` will create a symlink to this global package.
-  - `npm i ../some-package` will create a symlink to this package.
-  - With symlinks often many features don't work, but changes to the code base are immediately reflected.
-  - `npm install --no-save $(npm pack ../some-package | tail -1)` will pack the module and install it as if it were coming from a published package. Needs a refresh every time the packages code changes.
