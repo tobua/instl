@@ -65,6 +65,8 @@ It will take a restart for this to take effect, for an immediate result load the
 
 Ignore connecting during startup and then go to the `Remote` tab and click connect. Add your GitHub account, which will automatically connect when you're already logged in in the browser. Generate a SSH key and `Save`. If cloning the repositories in the `Remote` tab doesn't work go back to `Preferences` and edit the account by switching the protocol to HTTPS, this will keep the key to commit but clone in SourceTree without issues.
 
+In order to be able to use the generated SSH key also from Terminal make sure to checkout repositories with SSH.
+
 #### Prevent Sourcetree package-lock Lag
 
 The package-lock file is generated automatically, but due to it's size and the often huge amount of changes
