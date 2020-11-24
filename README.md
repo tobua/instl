@@ -28,7 +28,7 @@ Guide to reinstall the latest macOS optimized for Web Development.
 ## Applications
 
 - [Chrome](https://www.google.com/chrome/) Browser
-- [Lastpass](https://lastpass.com/?&ac=1) Passwords (Synced from Chrome Account)
+  - [Lastpass Extension](https://lastpass.com/?&ac=1) Passwords (Extensions usually synchronized from Google Account after signing in into Chrome)
 - [node](https://nodejs.org) JavaScript
 - [VS Code](https://code.visualstudio.com/) Code Editor
 - [Sourcetree](https://www.sourcetreeapp.com/) Git
@@ -54,7 +54,7 @@ It will take a restart for this to take effect, for an immediate result load the
 
 ### VS Code
 
-- Extensions: Prettier, ESLint, Stylelint, GitLens and Flow Language Support.
+- Extensions: Prettier, ESLint, Stylelint.
 - Theme: **⌘KT** and select `Light+`.
 - Configuration: Disable `View → Appearance → Show Status Bar`, `View → Show Minimap` and `View → Show Breadcrumbs`.
 - Terminal: **⌘J** to toggle the terminal.
@@ -76,6 +76,7 @@ it bogs down Sourcetree. To prevent this simply ignore the contents of those fil
 
 - XCode from App Store
 - [AndroidStudio](https://developer.android.com/studio/) Android IDE
+- Flow Language Support Extension in VSCode
 
 ### Enable Language with Special Characters
 
