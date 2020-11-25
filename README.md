@@ -16,14 +16,13 @@ Guide to reinstall the latest macOS optimized for Web Development.
 
 ## Configuring the System
 
-- Install Updates and enable Auto Update in `⚙️ Software Update` settings.
-- Add applications listed below.
+- Increase mouse tracking speed in `⚙️ Mouse` and enable secondary click if you're using Magic Mouse.
 - Remove unused apps from dock and disable `Show recent applications` in dock preferences.
 - Edit the Desktop Background in `⚙️ Desktop & Screen Saver`.
-- Increase mouse tracking speed in `⚙️ Mouse` and enable secondary click if you're using Magic Mouse.
-- Make sure Guest Account is disabled in `⚙️ Users & Groups`.
 - In `⚙️ Mission Control → Hot Corners...` add Mission Control to Bottom Right and Desktop to Bottom Left.
-- `⚙️ Energy Saver` increase time until display turns off when on power.
+- `⚙️ Battery` increase time until display turns off when on `Power Adapter`.
+- Install Updates and enable Auto Update in `⚙️ Software Update` settings.
+- Make sure Guest Account is disabled in `⚙️ Users & Groups`.
 
 ## Applications
 
@@ -31,41 +30,55 @@ Guide to reinstall the latest macOS optimized for Web Development.
   - [Lastpass Extension](https://lastpass.com/?&ac=1) Passwords (Extensions usually synchronized from Google Account after signing in into Chrome)
 - [node](https://nodejs.org) JavaScript
 - [VS Code](https://code.visualstudio.com/) Code Editor
+  - Move to the Applications folder before opening.
 - [Sourcetree](https://www.sourcetreeapp.com/) Git
+  - Not yet signed by Apple: After an unsuccessful try to open it go to `⚙️ Security & Privacy` and click `Open Anyways` 😱.
 
 ## Application Specific Setup
 
 ### Terminal
 
-This will avoid showing the computer name for every prompt and only the current
-folder is displayed. The command will create a `.zshrc` file in the user root folder.
+Run the following in the Terminal to avoid showing the computer name for every prompt. The command will create a `.zshrc` file in the user root folder. In between the single quotation marks you can add whatever you prefer. Restart the Terminal for the changes to take effect.
 
 ```
 echo "export PS1='→ '" >> ~/.zshrc
 ```
 
-It will take a restart for this to take effect, for an immediate result load the file now with `source ~/.zshrc`. In between the single quotation marks you can add whatever, usually a `$` sign is used.
-
 ### npm
 
 - Login: `npm login`
-- Global packages without sudo: `sudo chown -R $USER /usr/local/lib/node_modules` & `sudo chown -R $USER /usr/local/bin` (may not be super safe!)
-- Useful everyday commands `npm i -g epic-cli`
+- `[sudo] npm i -g epic-cli` [epic-cli](http://github.com/tobua/epic-cli) provides useful everyday commands.
+- Installing global packages without sudo: `sudo chown -R $USER /usr/local/lib/node_modules` & `sudo chown -R $USER /usr/local/bin` (installing global packages with sudo may be the safer option!)
 
 ### VS Code
 
-- Extensions: Prettier, ESLint, Stylelint.
-- Theme: **⌘KT** and select `Light+`.
-- Configuration: Disable `View → Appearance → Show Status Bar`, `View → Show Minimap` and `View → Show Breadcrumbs`.
-- Terminal: **⌘J** to toggle the terminal.
-- Prettier: Go to settings with **⌘,** search for `Format On Save` and check the box. This way the code will be prettified automatically on each save of a file.
-- Remove line numbers: `Settings → Line Numbers` off, uncheck `Folding` and uncheck `Glyph Margin`.
+- Extensions **⇧⌘X**: Install the following
+  - Prettier
+  - ESLint
+  - Stylelint (also works with CSS-in-JS)
+- Theme **⌘KT**: and select `Light+`.
+- Layout: Disable `View → Show Minimap`, `View → Show Breadcrumbs` and `View → Appearance → Show Status Bar`.
+- Settings **⌘[Comma]**: Check `Text Editor → FormattingText Editor → Format On Save` to format the code with the Prettier extension.
+  - 🥷 Mode: Turn `Text Editor → Line Numbers` off, uncheck `Text Editor → Folding` and uncheck `Text Editor → Glyph Margin`.
+- Usage
+  - Toggle the Terminal with **⌘J**.
+  - Select multiple cursors with **⌥[Click]**.
 
 ### Sourcetree
 
-Ignore connecting during startup and then go to the `Remote` tab and click connect. Add your GitHub account, which will automatically connect when you're already logged in in the browser. Generate a SSH key and `Save`. If cloning the repositories in the `Remote` tab doesn't work go back to `Preferences` and edit the account by switching the protocol to HTTPS, this will keep the key to commit but clone in SourceTree without issues.
+Ignore connecting during startup and then go to the `Remote` tab and click connect. Add your GitHub account, which will automatically connect when you're already logged in in the browser. Generate a SSH key and `Save`. In order to be able to checkout with SSH go to the Terminal and clone a repository with (install developer tools when prompted)
 
-In order to be able to use the generated SSH key also from Terminal make sure to checkout repositories with SSH.
+```
+git clone git@github.com:[username]/[repository].git
+```
+
+enter `yes` to add GitHub to known hosts. If it still fails try this and clone again.
+
+```
+ssh-add -K ~/.ssh/[GitHub-Username]-GitHub
+```
+
+After that you can clone and commit from both SourceTree and the CLI.
 
 #### Prevent Sourcetree package-lock Lag
 
@@ -76,7 +89,7 @@ it bogs down Sourcetree. To prevent this simply ignore the contents of those fil
 
 - XCode from App Store
 - [AndroidStudio](https://developer.android.com/studio/) Android IDE
-- Flow Language Support Extension in VSCode
+- Flow Language Support Extension in VS Code
 
 ### Enable Language with Special Characters
 
