@@ -57,7 +57,7 @@ echo "export PS1='→ '" >> ~/.zshrc
   - ESLint
   - Stylelint (also works with CSS-in-JS)
 - Theme **⌘KT**: and select `Light+`.
-- Layout: Disable `View → Show Minimap`, `View → Show Breadcrumbs` and `View → Appearance → Show Status Bar`.
+- Layout: Disable `View → Show Minimap`, `View → Show Breadcrumbs` and `View → Appearance → Show Status Bar` (If any of the extensions don't work check the status bar).
 - Settings **⌘[Comma]**: Check `Text Editor → FormattingText Editor → Format On Save` to format the code with the Prettier extension.
   - 🥷 Mode: Turn `Text Editor → Line Numbers` off, uncheck `Text Editor → Folding` and uncheck `Text Editor → Glyph Margin`.
 - Usage
@@ -101,3 +101,7 @@ Recommended if you frequently switch to a local language requiring special chara
 ## Usage
 
 - Press **⌘⇧.** to show hidden files temporarly in Finder.
+
+## Testing in Windows Browsers
+
+To test websites in Internet Explorer 11 or Edge download [VirtualBox](https://www.virtualbox.org/) along with a free testing Windows image from the Microsoft [Modern IE](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) initiative. Once the image is imported and running you can access the Mac's localhost through the `10.0.2.2` IP address, so localhost:3000 becomes http://10.0.2.2:3000.
