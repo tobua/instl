@@ -27,7 +27,6 @@ Guide to reinstall the latest macOS optimized for Web Development.
 ## Applications
 
 - [Chrome](https://www.google.com/chrome/) Browser
-  - [Lastpass Extension](https://lastpass.com/?&ac=1) Passwords (Extensions usually synchronized from Google Account after signing in into Chrome)
 - [node](https://nodejs.org) JavaScript
 - [VS Code](https://code.visualstudio.com/) Code Editor
   - Move to the Applications folder before opening.
@@ -59,7 +58,7 @@ echo "export PS1='→ '" >> ~/.zshrc
 - Theme **⌘KT**: and select `Light+`.
 - Layout: Disable `View → Show Minimap`, `View → Show Breadcrumbs` and `View → Appearance → Show Status Bar` (If any of the extensions don't work check the status bar).
 - Settings **⌘[Comma]**: Check `Text Editor → FormattingText Editor → Format On Save` to format the code with the Prettier extension.
-  - 🥷 Mode: Turn `Text Editor → Line Numbers` off, uncheck `Text Editor → Folding` and uncheck `Text Editor → Glyph Margin`.
+  - 🥷 Mode: Turn `Text Editor → Line Numbers` off, uncheck `Text Editor → Folding` and uncheck `Text Editor → Glyph Margin`. Click the dots next to explorer on the top-left and uncheck all.
 - Usage
   - Toggle the Terminal with **⌘J**.
   - Select multiple cursors with **⌥[Click]**.
