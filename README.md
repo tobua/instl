@@ -23,6 +23,7 @@ Guide to reinstall the latest macOS optimized for Web Development.
 - `⚙️ Battery` increase time until display turns off when on `Power Adapter`.
 - Install Updates and enable Auto Update in `⚙️ Software Update` settings.
 - Make sure Guest Account is disabled in `⚙️ Users & Groups`.
+- In `⚙️ Security & Privacy` enable unlocking with Apple Watch.
 
 ## Applications
 
@@ -57,7 +58,7 @@ echo "export PS1='→ '" >> ~/.zshrc
   - Stylelint (also works with CSS-in-JS)
 - Theme **⌘KT**: and select `Light+`.
 - Layout: Disable `View → Show Minimap`, `View → Show Breadcrumbs`, `View → Appearance → Show Activity Bar` (**⇧⌘F** to search **⇧⌘E** for files) and `View → Appearance → Show Status Bar` (If any of the extensions don't work check the status bar).
-- Settings **⌘[Comma]**: Check `Text Editor → FormattingText Editor → Format On Save` to format the code with the Prettier extension.
+- Settings **⌘[Comma]**: Check `Text Editor → Formatting → Format On Save` to format the code with the Prettier extension.
   - 🥷 Mode: Turn `Text Editor → Line Numbers` off, uncheck `Text Editor → Folding` and uncheck `Text Editor → Glyph Margin`. Click the dots next to explorer on the top-left and uncheck all.
 - Usage
   - Toggle the Terminal with **⌘J**.
