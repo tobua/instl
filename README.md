@@ -63,6 +63,7 @@ echo "export PS1='→ '" >> ~/.zshrc
 - Usage
   - Toggle the Terminal with **⌘J**.
   - Select multiple cursors with **⌥[Click]**.
+  - **⌘D** will add another cursor to the next found current selection below.
 
 ### Sourcetree
 
@@ -87,9 +88,32 @@ it bogs down Sourcetree. To prevent this simply ignore the contents of those fil
 
 ### React Native
 
+- Flow Language Support Extension in VS Code
 - XCode from App Store
 - [AndroidStudio](https://developer.android.com/studio/) Android IDE
-- Flow Language Support Extension in VS Code
+  - Open project in `/android`
+  - Update dependencies in the `SDK Manager` (icon in top-right)
+  - Add a new Virtual Device in the `AVD Manager`
+  - Install JDK from [Oracle](https://www.oracle.com/java/technologies/downloads)
+  - Add below binaries (includes adb) to path with `vim ~/.zshrc`
+
+```sh
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+# optional, switch java to proper version
+export JAVA_HOME=$(/usr/libexec/java_home -v 16.0.2)
+```
+
+#### Update native installation
+
+The default gradle version from the react-native installation will only work with very old Java versions.
+
+- Update gradle to newest version in [Gradle Releases](https://gradle.org/releases/) and [Google Maven](https://maven.google.com/web/index.html?q=gradle#com.android.tools.build:gradle) for build.gradle
+  - File android/build.gradle
+  - and android/gradle/wrapper/gradle-wrapper.properties
 
 ### Enable Language with Special Characters
 
