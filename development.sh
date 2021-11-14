@@ -47,5 +47,12 @@ open ~/Downloads/googlechrome.dmg
 sudo cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
 diskutil eject Google\ Chrome
 rm ~/Downloads/googlechrome.dmg
+open -a 'Google Chrome'
+
+printf "\n${LOGO} \033[1mTerminal\033[0m\n\n"
+echo "export PS1='→ '" >> ~/.zshrc
+echo "export PATH=\"\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin\"" >> ~/.zshrc
+printf "Reloading Terminal configuration from ~/.zshrc.\n"
+source ~/.zshrc
 
 printf "\n${LOGO} Done 😃 You're all set and ready to code away.\n"
