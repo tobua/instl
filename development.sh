@@ -6,6 +6,8 @@ printf "\n${LOGO} \033[1mConfiguring the System\033[0m\n\n"
 
 printf "🛠️  Setting increasing mouse tracking speed.\n"
 defaults write -g com.apple.mouse.scaling 2.5
+printf "🛠️  Enable Magic Mouse right click.\n"
+defaults write com.apple.AppleMultitouchMouse.plist MouseButtonMode TwoButton
 printf "🛠️  Won't show recent applications in dock anymore.\n"
 defaults write com.apple.dock show-recents -bool FALSE
 printf "👷 Remove the applications you don't need from the dock yourself.\n"
@@ -41,13 +43,20 @@ killall Dock
 
 printf "\n${LOGO} \033[1mApplications\033[0m\n\n"
 
+printf "Prompting to install XCode CLI Tools like git, might take some time.\n"
+xcode-select --install
 printf "Installing Google Chrome.\n"
 curl https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg -o ~/Downloads/googlechrome.dmg
 open ~/Downloads/googlechrome.dmg
+sleep .5 # wait until volume is mounted.
 sudo cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
 diskutil eject Google\ Chrome
 rm ~/Downloads/googlechrome.dmg
-open -a 'Google Chrome'
+printf "Opening Google Chrome to download further software.\n"
+open -a /Applications/Google\ Chrome.app --args 'https://nodejs.org' 'https://code.visualstudio.com' 'https://www.sourcetreeapp.com'
+printf "To download latest node, click \033[1mCurrent\033[0m.\n"
+printf "To download VS Code, click \033[1mDownload Mac Universal\033[0m.\n"
+printf "To download Sourcetree, click \033[1mDownload for Mac OS X\033[0m.\n"
 
 printf "\n${LOGO} \033[1mTerminal\033[0m\n\n"
 echo "export PS1='→ '" >> ~/.zshrc

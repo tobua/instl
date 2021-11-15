@@ -20,6 +20,7 @@ The following tasks marked with 🤖 can be automated by running `sh development
 
 ## Configuring the System
 
+- Open `⚙️ System Preferences` and sign in to your Apple ID.
 - 🤖 Increase mouse tracking speed in `⚙️ Mouse` and enable secondary click if you're using Magic Mouse.
 - Remove unused apps from dock and 🤖 disable `Show recent applications` in dock preferences.
 - 🤖 In `⚙️ Mission Control → Hot Corners...` add Mission Control to Bottom Right and Desktop to Bottom Left.
@@ -54,7 +55,6 @@ echo "export PS1='→ '" >> ~/.zshrc
 
 ### 🤖 npm
 
-- Login: `npm login`
 - `[sudo] npm i -g epic-cli` [epic-cli](http://github.com/tobua/epic-cli) provides useful everyday commands.
 
 ### VS Code
@@ -76,19 +76,17 @@ echo "export PS1='→ '" >> ~/.zshrc
 
 ### Sourcetree
 
-Ignore connecting during startup and then go to the `Remote` tab and click connect. Add your GitHub account, which will automatically connect when you're already logged in in the browser. Generate a SSH key and `Save`. In order to be able to checkout with SSH go to the Terminal and clone a repository with (install developer tools when prompted)
+Ignore connecting during startup and then go to the `Remote` tab and click connect. Add your GitHub account, which will automatically connect when you're already logged in in the browser. Logging into GitHub in Chrome make sure to remove existing SSH keys from old installations. Back in Sourcetree generate a new SSH key and `Save`. Checking out won't work until the authenticity of github.com has been confirmed. This can be done in the Terminal and by cloning any repository (install developer tools when prompted)
 
 ```
-git clone git@github.com:[username]/[repository].git
+git clone git@github.com:[username]/[repository].git [destination-folder]
 ```
 
-enter `yes` to add GitHub to known hosts. If it still fails try this and clone again.
+enter `yes` to add GitHub to known hosts. The following command will ensure the key is available when committing.
 
 ```
 ssh-add --apple-use-keychain ~/.ssh/[GitHub-Username]-GitHub
 ```
-
-After that you can clone and commit from both SourceTree and the CLI.
 
 ## Usage
 
