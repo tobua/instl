@@ -54,14 +54,37 @@ diskutil eject Google\ Chrome
 rm ~/Downloads/googlechrome.dmg
 printf "Opening Google Chrome to download further software.\n"
 open -a /Applications/Google\ Chrome.app --args 'https://nodejs.org' 'https://code.visualstudio.com' 'https://www.sourcetreeapp.com'
-printf "To download latest node, click \033[1mCurrent\033[0m.\n"
-printf "To download VS Code, click \033[1mDownload Mac Universal\033[0m.\n"
-printf "To download Sourcetree, click \033[1mDownload for Mac OS X\033[0m.\n"
+printf "To download latest node, click \033[1mCurrent\033[0m in the first tab.\n"
+printf "To download VS Code, click \033[1mDownload Mac Universal\033[0m in the second tab.\n"
+printf "To download Sourcetree, click \033[1mDownload for Mac OS X\033[0m in the third tab.\n"
 
-printf "\n${LOGO} \033[1mTerminal\033[0m\n\n"
+read -p "Press any key to continue after installing the applications you need." -n 1 -r
+
+printf "\n\n${LOGO} \033[1mTerminal\033[0m\n\n"
 echo "export PS1='→ '" >> ~/.zshrc
 echo "export PATH=\"\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin\"" >> ~/.zshrc
 printf "Reloading Terminal configuration from ~/.zshrc.\n"
 source ~/.zshrc
+
+printf "Installing VS Code extensions (ESLint and Prettier).\n"
+code --install-extension dbaeumer.vscode-eslint --install-extension esbenp.prettier-vscode
+printf "Configuring VS Code settings.\n"
+touch ~/Library/Application\ Support/Code/User/settings.json
+cat > ~/Library/Application\ Support/Code/User/settings.json <<EOL
+{
+    "workbench.colorTheme": "Default Light+",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.lineNumbers": "off",
+    "editor.folding": false,
+    "editor.glyphMargin": false,
+    "workbench.startupEditor": "none",
+    "workbench.activityBar.visible": false,
+    "editor.formatOnSave": true,
+    "editor.bracketPairColorization.enabled": true,
+    "extensions.ignoreRecommendations": true,
+    "workbench.statusBar.visible": false
+}
+EOL
 
 printf "\n${LOGO} Done 😃 You're all set and ready to code away.\n"
