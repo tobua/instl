@@ -66,6 +66,13 @@ echo "export PATH=\"\$PATH:/Applications/Visual Studio Code.app/Contents/Resourc
 printf "Reloading Terminal configuration from ~/.zshrc.\n"
 source ~/.zshrc
 
+read -p "Install epic-cli (see npmjs.com/epic-cli)? (Type y for yes or n for no) " yn
+case $yn in
+    [Yy]* ) sudo npm i -g epic-cli; break;;
+    [Nn]* ) break;;
+    * ) echo "Please answer yes (type: y) or no (type: n).";;
+esac
+
 printf "Installing VS Code extensions (ESLint and Prettier).\n"
 code --install-extension dbaeumer.vscode-eslint --install-extension esbenp.prettier-vscode
 printf "Configuring VS Code settings.\n"
@@ -83,7 +90,19 @@ cat > ~/Library/Application\ Support/Code/User/settings.json <<EOL
     "editor.formatOnSave": true,
     "editor.bracketPairColorization.enabled": true,
     "extensions.ignoreRecommendations": true,
-    "workbench.statusBar.visible": false
+    "workbench.statusBar.visible": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
 EOL
 
