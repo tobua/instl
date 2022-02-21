@@ -16,7 +16,14 @@ Guide to reinstall the latest macOS optimized for Web Development.
 
 ## 🤖 Automatic Configuration Script
 
-The following tasks marked with 🤖 can be automated by running `sh development.sh` found in this repository (⚠️ Currently in development).
+The following tasks marked with 🤖 can be automated by running the `run.sh` found in this repository.
+
+```sh
+curl https://raw.githubusercontent.com/tobua/instl/main/run.sh -o run.sh
+sh run.sh
+# Follow instructions in script and then restart to run again with sudo.
+sudo sh run.sh
+```
 
 ## Configuring the System
 
