@@ -78,6 +78,9 @@ else
     code --install-extension dbaeumer.vscode-eslint --install-extension esbenp.prettier-vscode
     printf "Configuring VS Code settings.\n"
     touch ~/Library/Application\ Support/Code/User/settings.json
+    # VS Code has no root access and requires to write to this file.
+    DEFAULT_USER=$(logname 2>/dev/null)
+    chown $DEFAULT_USER ~/Library/Application\ Support/Code/User/settings.json
     cat > ~/Library/Application\ Support/Code/User/settings.json <<EOL
 {
     "workbench.colorTheme": "Default Light+",
