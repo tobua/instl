@@ -95,16 +95,8 @@ else
     "editor.bracketPairColorization.enabled": true,
     "extensions.ignoreRecommendations": true,
     "workbench.statusBar.visible": false,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
+    # jsonc: Formatting of JSON with JS-style comments, often used in tsconfig.json.
+    "[javascript][json][typescript][typescriptreact][jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
