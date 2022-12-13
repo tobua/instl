@@ -23,6 +23,7 @@ if [[ $USER != "root" ]]; then
     printf "👷 Remove the Guest account from ⚙️  Users & Groups.\n"
     printf "🔄  Restart for all changes to take effect and then run this script with sudo.\n"
 else
+    DEFAULT_USER=$(logname 2>/dev/null)
     printf "🛠️  Turning display off later 1 hour for 🔋 and 3 hours for 🔌.\n"
     pmset -a displaysleep 180
     pmset -b displaysleep 60
@@ -51,6 +52,8 @@ else
     open ~/Downloads/googlechrome.dmg
     sleep 2 # wait until volume is mounted.
     cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
+    # Chrome requires user permissions to update itself (TODO not yet tested).
+    chown $DEFAULT_USER /Applications/Google\ Chrome.app
     diskutil eject Google\ Chrome
     rm ~/Downloads/googlechrome.dmg
     printf "Opening Google Chrome to download further software.\n"
@@ -79,7 +82,6 @@ else
     printf "Configuring VS Code settings.\n"
     touch ~/Library/Application\ Support/Code/User/settings.json
     # VS Code has no root access and requires to write to this file.
-    DEFAULT_USER=$(logname 2>/dev/null)
     chown $DEFAULT_USER ~/Library/Application\ Support/Code/User/settings.json
     cat > ~/Library/Application\ Support/Code/User/settings.json <<EOL
 {

@@ -107,10 +107,23 @@ To test websites in Internet Explorer 11 or Edge download [VirtualBox](https://w
 
 ## React Native
 
-- Flow Language Support Extension in VS Code
-- XCode from App Store
-  - Cocoapods installed with `sudo gem install cocoapods`
-- [AndroidStudio](https://developer.android.com/studio) Android IDE
+- Download and open XCode from App Store.
+- Install [homebrew](https://brew.sh/).
+  - While React Native generally works with the newest built-in macOS ruby version it's better to upgrade. Upgrading with `sudo gem update --system` doesn't seem to work well.
+- Then run `brew install rbenv ruby-build` to install rbenv a Ruby version manager to match the version required by React Native defined in [`.ruby-version`](https://github.com/facebook/react-native/blob/main/.ruby-version). Then switch to the proper version with `rbenv install 2.7.5` and `rbenv global 2.7.5`. Make sure the proper version is installed with `ruby --version`.
+  - Add the following lines with `sudo vim ~/.zshrc` to the file and restart the Terminal.
+
+```sh
+# Add rbenv Ruby to path.
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+# Add gems to path.
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
+```
+
+- Install Cocoapods gem with `gem install cocoapods --user-install` and update all gems with `gem update`.
+- Download and install [AndroidStudio](https://developer.android.com/studio) Android IDE.
   - Use Android Studio to open the `/android` project folder from a React Native installation.
   - Update dependencies in the `SDK Manager` (icon in top-right).
   - Add a new Virtual Device in the `AVD Manager`.
