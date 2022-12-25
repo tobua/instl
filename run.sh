@@ -83,24 +83,25 @@ else
     touch ~/Library/Application\ Support/Code/User/settings.json
     # VS Code has no root access and requires to write to this file.
     chown $DEFAULT_USER ~/Library/Application\ Support/Code/User/settings.json
+    # jsonc: Formatting of JSON with JS-style comments, often used in tsconfig.json.
     cat > ~/Library/Application\ Support/Code/User/settings.json <<EOL
 {
-    "workbench.colorTheme": "Default Light+",
-    "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false,
-    "editor.lineNumbers": "off",
-    "editor.folding": false,
-    "editor.glyphMargin": false,
-    "workbench.startupEditor": "none",
-    "workbench.activityBar.visible": false,
-    "editor.formatOnSave": true,
-    "editor.bracketPairColorization.enabled": true,
-    "extensions.ignoreRecommendations": true,
-    "workbench.statusBar.visible": false,
-    # jsonc: Formatting of JSON with JS-style comments, often used in tsconfig.json.
-    "[javascript][json][typescript][typescriptreact][jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+  "workbench.colorTheme": "Default Light+",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.lineNumbers": "off",
+  "editor.folding": false,
+  "editor.glyphMargin": false,
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.visible": false,
+  "editor.formatOnSave": true,
+  "editor.bracketPairColorization.enabled": true,
+  "extensions.ignoreRecommendations": true,
+  "workbench.statusBar.visible": false,
+  "window.commandCenter": false,
+  "[javascript][json][typescript][typescriptreact][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
 EOL
     printf "\n${LOGO} Done 😃 You're all set and ready to code away.\n"
