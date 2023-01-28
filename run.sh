@@ -86,22 +86,23 @@ else
     # jsonc: Formatting of JSON with JS-style comments, often used in tsconfig.json.
     cat > ~/Library/Application\ Support/Code/User/settings.json <<EOL
 {
-  "workbench.colorTheme": "Default Light+",
-  "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
   "editor.lineNumbers": "off",
   "editor.folding": false,
   "editor.glyphMargin": false,
-  "workbench.startupEditor": "none",
-  "workbench.activityBar.visible": false,
   "editor.formatOnSave": true,
   "editor.bracketPairColorization.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "extensions.ignoreRecommendations": true,
-  "workbench.statusBar.visible": false,
   "window.commandCenter": false,
-  "[javascript][json][typescript][typescriptreact][jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": false,
+  "workbench.colorTheme": "Default Light+"
 }
 EOL
     printf "\n${LOGO} Done 😃 You're all set and ready to code away.\n"
