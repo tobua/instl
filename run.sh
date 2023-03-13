@@ -48,12 +48,10 @@ else
     printf "Prompting to install XCode CLI Tools like git, might take some time.\n"
     xcode-select --install
     printf "Installing Google Chrome.\n"
-    curl https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg -o ~/Downloads/googlechrome.dmg
+    curl https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg -o ~/Downloads/googlechrome.dmg
     open ~/Downloads/googlechrome.dmg
     sleep 2 # wait until volume is mounted.
     cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
-    # Chrome requires user permissions to update itself (TODO not yet tested).
-    chown $DEFAULT_USER /Applications/Google\ Chrome.app
     diskutil eject Google\ Chrome
     rm ~/Downloads/googlechrome.dmg
     printf "Opening Google Chrome to download further software.\n"
