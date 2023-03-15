@@ -48,7 +48,6 @@ Recommended if you frequently switch to a local language requiring special chara
 - 🤖 [VS Code](https://code.visualstudio.com/) Code Editor
   - Move to the Applications folder before opening.
 - 🤖 [Sourcetree](https://www.sourcetreeapp.com/) Git
-  - Not yet signed by Apple: After an unsuccessful try to open it go to `⚙️ Security & Privacy` and click `Open Anyways` 😱.
 
 ## Application Specific Setup
 
@@ -106,17 +105,12 @@ ssh-add -q --apple-use-keychain ~/.ssh/[GitHub-Username]-GitHub
 
 - Press **⌘⇧.** to show hidden files temporarly in Finder.
 
-## Windows Browsers for Testing
-
-To test websites in Internet Explorer 11 or Edge download [VirtualBox](https://www.virtualbox.org/) along with a free testing Windows image from the Microsoft [Modern IE](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) initiative. Once the image is imported and running you can access the Mac's localhost through the `10.0.2.2` IP address, so localhost:3000 becomes http://10.0.2.2:3000.
-
 ## React Native
 
 - Download and open XCode from App Store.
-- Install [homebrew](https://brew.sh/).
-  - While React Native generally works with the newest built-in macOS ruby version it's better to upgrade. Upgrading with `sudo gem update --system` doesn't seem to work well.
-- Then run `brew install rbenv ruby-build` to install rbenv a Ruby version manager to match the version required by React Native defined in [`.ruby-version`](https://github.com/facebook/react-native/blob/main/.ruby-version). Then switch to the proper version with `rbenv install 2.7.5` and `rbenv global 2.7.5`. Make sure the proper version is installed with `ruby --version`.
+- React Native can work with the preinstalled version of `gem` but upgrading doesn't work well. To avoid this install [homebrew](https://brew.sh/) and then run `brew install rbenv ruby-build` to install the Ruby environment manager. Run `rbenv install -l` to list the newest stable release and install it with `rbenv install X.Y.Z` and apply it with `rbenv global X.Y.Z`.
   - Add the following lines with `sudo vim ~/.zshrc` to the file and restart the Terminal.
+  - Check if the switch was successful with `ruby --version`.
 
 ```sh
 # Add rbenv Ruby to path.
@@ -146,7 +140,7 @@ export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 ```
 
-### Update native Android installation
+### Update Native Android Installation
 
 The default gradle version from the react-native installation will only work with very old Java versions.
 
