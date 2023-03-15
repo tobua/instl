@@ -124,9 +124,9 @@ export PATH="$PATH:$GEM_HOME/bin"
 - Install Cocoapods gem with `gem install cocoapods --user-install` and update all gems with `gem update`. Also, run `gem update --system` to update gem itself.
 - Download and install [AndroidStudio](https://developer.android.com/studio) Android IDE.
   - Use Android Studio to open the `/android` project folder from a React Native installation.
-  - Update dependencies in the `SDK Manager` (icon in top-right).
-  - Add a new Virtual Device in the `AVD Manager`.
-  - Add below binaries (includes adb) to path with `vim ~/.zshrc`.
+  - Update dependencies in the `SDK Manager` (icon in top-right). When using [numic](https://github.com/tobua/numic) make sure to [install the CLI tools](https://github.com/tobua/android-sdk-numic-plugin#prerequisites).
+  - Add a new Virtual Device in the `Device Manager`.
+  - Add below binaries (includes adb) to path with `sudo vim ~/.zshrc`.
 
 ```sh
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -135,7 +135,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Use Java bundled with Android Studio.
-export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home
+export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jbr/Contents/Home
 # Required by flipper debugger.
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 ```
