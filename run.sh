@@ -47,6 +47,8 @@ else
 
     printf "Prompting to install XCode CLI Tools like git, might take some time.\n"
     xcode-select --install
+    printf "Installing Bun 🐰\n"
+    curl -fsSL https://bun.sh/install | bash
     printf "Installing Google Chrome.\n"
     curl https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg -o ~/Downloads/googlechrome.dmg
     open ~/Downloads/googlechrome.dmg
@@ -56,7 +58,7 @@ else
     rm ~/Downloads/googlechrome.dmg
     printf "Opening Google Chrome to download further software.\n"
     open -a /Applications/Google\ Chrome.app --args 'https://nodejs.org' 'https://code.visualstudio.com' 'https://www.sourcetreeapp.com'
-    printf "To download latest node, click \033[1mCurrent\033[0m in the first tab.\n"
+    printf "To download latest node, click the \033[1mlatest\033[0m version in the first tab.\n"
     printf "To download VS Code, click \033[1mDownload Mac Universal\033[0m in the second tab.\n"
     printf "To download Sourcetree, click \033[1mDownload for Mac OS X\033[0m in the third tab.\n"
 
@@ -65,6 +67,8 @@ else
     printf "\n\n${LOGO} \033[1mTerminal\033[0m\n\n"
     echo "export PS1='→ '" >> ~/.zshrc
     echo "export PATH=\"\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin\"" >> ~/.zshrc
+    echo "export BUN_INSTALL=\"\$HOME/.bun\"" >> ~/.zshrc
+    echo "export PATH=\"\$BUN_INSTALL/bin:\$PATH\"" >> ~/.zshrc
     printf "Reloading Terminal configuration from ~/.zshrc.\n"
     source ~/.zshrc
 

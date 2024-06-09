@@ -44,7 +44,7 @@ Recommended if you frequently switch to a local language requiring special chara
 ## Applications
 
 - 🤖 [Chrome](https://www.google.com/chrome/) Browser
-- 🤖 [node](https://nodejs.org) JavaScript
+- 🤖 [Bun](https://bun.sh) / [node](https://nodejs.org) JavaScript Runtime
 - 🤖 [VS Code](https://code.visualstudio.com/) Code Editor
   - Move to the Applications folder before opening.
 - 🤖 [Sourcetree](https://www.sourcetreeapp.com/) Git
@@ -108,9 +108,8 @@ ssh-add -q --apple-use-keychain ~/.ssh/[GitHub-Username]-GitHub
 ## React Native
 
 - Download and open XCode from App Store.
-- React Native can work with the preinstalled version of `gem` but upgrading doesn't work well. To avoid this install [homebrew](https://brew.sh/) and then run `brew install rbenv ruby-build` to install the Ruby environment manager. Run `rbenv install -l` to list the newest stable release and install it with `rbenv install X.Y.Z` and apply it with `rbenv global X.Y.Z`.
-  - Add the following lines with `sudo vim ~/.zshrc` to the file and restart the Terminal.
-  - Check if the switch was successful with `ruby --version`.
+- The default Ruby version on macOS is quite outdated. Install [homebrew](https://brew.sh/) (make sure to add it to the PATH as described in the script output). Run `brew install rbenv ruby-build` to install the Ruby environment manager. Run `rbenv install -l` to list the newest stable release and install it with `rbenv install X.Y.Z` and apply it with `rbenv global X.Y.Z`.
+- Add the following lines with `sudo vim ~/.zshrc` to the file and restart the Terminal and then check if the switch was successful with `ruby --version`.
 
 ```sh
 # Add rbenv Ruby to path.
@@ -121,7 +120,7 @@ export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 ```
 
-- Install Cocoapods gem with `gem install cocoapods --user-install` and update all gems with `gem update`. Also, run `gem update --system` to update gem itself.
+- Update all gems with `gem update` and run `gem update --system` to update gem itself. Then, install Cocoapods gem with `gem install cocoapods --user-install`.
 - Download and install [AndroidStudio](https://developer.android.com/studio) Android IDE.
   - Use Android Studio to open the `/android` project folder from a React Native installation.
   - Update dependencies in the `SDK Manager` (icon in top-right). When using [numic](https://github.com/tobua/numic) make sure to [install the CLI tools](https://github.com/tobua/android-sdk-numic-plugin#prerequisites).
