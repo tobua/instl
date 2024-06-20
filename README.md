@@ -45,8 +45,7 @@ Recommended if you frequently switch to a local language requiring special chara
 
 - 🤖 [Chrome](https://www.google.com/chrome/) Browser
 - 🤖 [Bun](https://bun.sh) / [node](https://nodejs.org) JavaScript Runtime
-- 🤖 [VS Code](https://code.visualstudio.com/) Code Editor
-  - Move to the Applications folder before opening.
+- 🤖 [VS Code](https://code.visualstudio.com/) Code Editor or [Cursor](https://cursor.com)
 - 🤖 [Sourcetree](https://www.sourcetreeapp.com/) Git
 
 ## Application Specific Setup
@@ -107,7 +106,7 @@ ssh-add -q --apple-use-keychain ~/.ssh/[GitHub-Username]-GitHub
 
 ## React Native
 
-- Download and open XCode from App Store.
+- Download and open XCode from App Store. If downloading the 7GB for the Simulator fails, it can be downloaded manually from the CLI in a more robust way with `xcodebuild -downloadPlatform iOS`.
 - The default Ruby version on macOS is quite outdated. Install [homebrew](https://brew.sh/) (make sure to add it to the PATH as described in the script output). Run `brew install rbenv ruby-build` to install the Ruby environment manager. Run `rbenv install -l` to list the newest stable release and install it with `rbenv install X.Y.Z` and apply it with `rbenv global X.Y.Z`.
 - Add the following lines with `sudo vim ~/.zshrc` to the file and restart the Terminal and then check if the switch was successful with `ruby --version`.
 
@@ -138,11 +137,3 @@ export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jbr/Contents/Home
 # Required by flipper debugger.
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 ```
-
-### Update Native Android Installation
-
-The default gradle version from the react-native installation will only work with very old Java versions.
-
-- Update gradle to newest version in [Gradle Releases](https://gradle.org/releases/) and [Google Maven](https://maven.google.com/web/index.html?q=gradle#com.android.tools.build:gradle) for build.gradle
-  - File android/build.gradle
-  - and android/gradle/wrapper/gradle-wrapper.properties
